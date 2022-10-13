@@ -1,0 +1,126 @@
+出库-->到指定地点(无清扫动作)-->到指定地点(按贴边清扫)-->到指定地点(无清扫动作)-->倒车入库
+
+/* 目标位置数据，若无则填空字符串 */
+"spActionType": 1, /* 自动驾驶到达这个目标点过程中执行的动作，
+1:按贴边清扫(靠右), 
+2:按中心线清扫, 
+3:无清扫动作(只是纯粹自动驾驶到达到这个点) 
+
+/*动作模式；1:到达区域内时触发动作, 2:到达目标点时触发的动作 */
+
+"spActionType": 
+/*自动驾驶到达这个区域内或目标点(根据 actionMode 而定)过程中执行的动作，*/
+    1:按贴边清扫(靠右), 
+    2:按中心线清扫, 
+    3:无清扫动作(只是纯粹自动驾驶到达到这个点) 
+    4:巡检时清扫 
+    5:遍历清扫 
+    6:循迹清扫;
+
+spPostActionType:
+/*自动驾驶到达这个区域内或目标点(根据 actionMode 而定)后执行的动作，*/
+1: 按贴边清扫(靠右), 
+2:按中心线清扫, 
+4:遍历清扫, 
+5:巡检式清扫 
+
+/* 跟该动作关联的动作列表，动作可以为 goPoint、goHome、spGoPoint、spGoAreaPoint 之外的任意类型的动作 */
+
+/* 任务执行的开始进度点，浮点数 Float64; 单位度; 保留 2 位小数; */ "endProgress": 100.00, /* 任务执行的结束进度点，浮点数 Float64; 单位度; 保留 2 位小数， 默认填100%*/
+
+
+
+区域--spGoAreaPoint
+recv_body={"actionList":[{
+        "action":"spGoAreaPoint",
+        "actionList":[
+                {"action":"spCmd",
+                "cmd":"0x0603","
+                cmdContent":"{"cmd":"0x0603","spd":5}"
+                },
+                
+                {"action":"spCmd",
+                "cmd":"0x0506",
+                "cmdContent":"{"cmd":"0x0506","mode":"0x01"}"
+                },
+                
+                {"action":"spCmd",
+                "cmd":"0x0505",
+                "cmdContent":"{"cmd":"0x0505"}"
+                }
+            ],
+
+        "actionMode":1,
+        "areaId":163,
+        "areaType":1,"
+        lat":24.986638327439326,"lng":116.88607889493404,
+        "name":"163",
+        "pointId":-1,
+        "raw":"{x: 0, y: 0, z: 0, qx: 0, qy: 0, qz: 0, qw: 0}",
+        "spActionType":-1,
+        "spPostActionType":1
+        }],
+        "bn":85,
+        "cmd":1536,
+        "desp":"",
+        "name":"定时任务测试",
+        "routeId":268153796339696115}
+
+{"bn":85,"cmd":1536,"res":-1}
+------------------------------------------------------
+
+
+道路：
+recv_body={"actionList":[{
+        "action":"spGoAreaPoint",
+        "actionList":[{"action":"spCmd","cmd":"0x0603","cmdContent":"{\"cmd\":\"0x0603\",\"spd\":5}"},{"action":"spCmd","cmd":"0x0506","cmdContent":"{\"cmd\":\"0x0506\",\"mode\":\"0x01\"}"},{"action":"spCmd","cmd":"0x0505","cmdContent":"{\"cmd\":\"0x0505\"}"}],
+        
+        "actionMode":1,
+        "areaId":166,
+        "areaType":1,
+        "lat":24.986544150411103,"lng":116.88615699039272,
+        "name":"166","pointId":-1,
+        "raw":"{x: 0, y: 0, z: 0, qx: 0, qy: 0, qz: 0, qw: 0}",
+        "spActionType":-1,
+        "spPostActionType":1}],
+    "bn":86,
+    "cmd":1536,
+    "desp":"",
+    "name":"定时任务测试",
+    "routeId":268153796339696115}
+{"bn":86,"cmd":1536,"res":-1}
+
+recv_body={
+    "actionList":[{
+        "action":"spGoAreaPoint",
+
+        "actionList":[{"action":"spCmd","cmd":"0x0603","cmdContent":"{\"cmd\":\"0x0603\",\"spd\":5}"},{"action":"spCmd","cmd":"0x0506","cmdContent":"{\"cmd\":\"0x0506\",\"mode\":\"0x01\"}"},{"action":"spCmd","cmd":"0x0505","cmdContent":"{\"cmd\":\"0x0505\"}"}],
+        "actionMode":1,
+        "areaId":169,
+        "areaType":1,
+        "lat":24.986579659903654,"lng":116.88616423369623,
+        "name":"169",
+        "pointId":-1,
+        "raw":"{x: 0, y: 0, z: 0, qx: 0, qy: 0, qz: 0, qw: 0}",
+        "spActionType":-1,
+        "spPostActionType":1}],
+    
+    "bn":87,
+    "cmd":1536,
+    "desp":"",
+    "name":"定时任务测试",
+    "routeId":268153796339696115
+}
+
+
+recv_body={"bn":18,"cmd":2,"res":0}
+
+出库-->到指定地点(无清扫动作)-->到指定地点(按贴边清扫)-->到指定地点(无清扫动作)-->倒车入库
+1:按贴边清扫(靠右), 
+2:按中心线清扫, 
+3:无清扫动作(只是纯粹自动驾驶到达到这个点) 
+4:巡检时清扫 
+5:遍历清扫 
+6:循迹清扫
+7:出库
+8:倾倒垃圾

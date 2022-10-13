@@ -1,0 +1,34 @@
+{
+    "actionLists":[
+        {
+            "actionType": "出库",
+            "mission": {
+                "lane_driving_sweeping_mode":1,
+                "free_space_sweeping_mode":7,
+                "goal":{"x":223.849456787, "y":111.693206787, "z":0, "qx":0, "qy":0, "qz":-0.0803183666977, "qw":0.996769261149}}
+        },
+
+        {
+            "actionType": "指定地点--无清扫动作",
+            "mission": {
+                "lane_driving_sweeping_mode":1,
+                "free_space_sweeping_mode":7,
+                "goal":{"x":197.943328857, "y":111.693206787, "z":0, "qx":0, "qy":0, "qz":-0.0848321472487, "qw":0.996395256308}}
+        },
+
+        {
+            "actionType": "指定地点--倾倒垃圾",
+            "mission": {
+                "lane_driving_sweeping_mode":1,
+                "free_space_sweeping_mode":10,
+                "goal":{"x":211.403203889, "y":104.482390484, "z":-1.25020945072, "qx":-0.00786980104929, "qy":0.0190805019064, "qz":0.624766915508, "qw":0.780538469241}}
+        }
+
+        
+    ]
+}
+
+
+
+  
+
