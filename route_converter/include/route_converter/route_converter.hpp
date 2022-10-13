@@ -36,7 +36,7 @@ private:
 
     lanelet::LaneletMapPtr global_lanelet_map_ptr_;
     lanelet::ConstLanelets all_lanelets_;
-
+    void reSubscriber();
     void onLanelet2Map(autoware_lanelet2_msgs::MapBin msg);
     void onRoute(const autoware_planning_msgs::RouteConstPtr &msg);
     
