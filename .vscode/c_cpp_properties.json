@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/zymouse/code/sweeping_code/catkin_ws_sweeper/devel/include/**",
+        "/home/zymouse/code/sweeping_code/robot_msgs_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/zymouse/code/sweeping_code/catkin_ws_sweeper/src/sweeper_manage_system/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
