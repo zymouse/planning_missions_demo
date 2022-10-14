@@ -21,11 +21,15 @@ class Missions_publisher:
         _pub_missionsPlanning_topic = rospy.get_param("~pub_missionsPlanning_topic", "/planning/mission_planner/missoins")
         self.pub_missions =  rospy.Publisher(_pub_missionsPlanning_topic, Missions, queue_size=1)
 
-        _sub_missionAchieved_topic = rospy.get_param("~sub_missionAchieved_topicc", "/planning/mission_planner/mission_achieved")
+        _pub_mission_Planning_topic = rospy.get_param("~pub_mission_Planning_topic", "/planning/mission_planner/current_mission")
+        self.pub_current_mission =  rospy.Publisher(_pub_mission_Planning_topic, Mission, queue_size=1)
+
+        _sub_missionAchieved_topic = rospy.get_param("~sub_missionAchieved_topic", "/planning/mission_planner/mission_achieved")
         self.sub_missionAchieved = rospy.Subscriber(_sub_missionAchieved_topic, MissionAchieved, self.missionAchieved_callback)
         sleep(3)
         self.pub_Missions_msg()
         self.pub_missions.publish(self.missions_msg)
+        self.pub_current_mission(self.missions_msg.current_mission)
         self.missions_msg.all_missions = list()
         self.actionqueue.popleft()
 
@@ -36,6 +40,7 @@ class Missions_publisher:
         if msg.mission_order and msg.mission_achieved and len(self.actionqueue)>0:
             self.pub_Missions_msg()
             self.pub_missions.publish(self.missions_msg)
+            self.pub_current_mission(self.missions_msg.current_mission)
             self.missions_msg.all_missions = list()
             self.actionqueue.popleft()
 

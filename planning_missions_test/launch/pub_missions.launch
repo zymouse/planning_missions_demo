@@ -1,6 +1,7 @@
 <launch>
     <node pkg="planning_missions_test" type="planning_missions_test.py" name="missions_publisher_test" output="screen">
         <param name="~pub_missionsPlanning_topic"  value="/planning/mission_planner/missions" type="str"/>
-        <param name="~sub_missionAchieved_topicc"  value="/planning/mission_planner/mission_achieved" type="str"/>
+        <param name="~pub_mission_Planning_topic"  value="/planning/mission_planner/current_mission" type="str"/>
+        <param name="~sub_missionAchieved_topic"  value="/planning/mission_planner/mission_achieved" type="str"/>
     </node>
 </launch>
