@@ -23,7 +23,7 @@ route_converter::route_converter():nh_("~")
     
     // publisher
     {
-        pub_traj_ = nh_.advertise<autoware_planning_msgs::Trajectory>(pub_traj_topic_, 1, true);
+        pub_traj_ = nh_.advertise<autoware_planning_msgs::Trajectory>(pub_traj_topic_, 1, false);
     }
 
     sleep(3);
