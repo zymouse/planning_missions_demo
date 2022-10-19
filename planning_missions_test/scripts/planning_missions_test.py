@@ -54,7 +54,7 @@ class Missions_publisher:
 
     def missionAchieved_callback(self, msg):
         if msg.mission_achieved and msg.mission_order==self.missions_msg.current_mission.mission_order  and len(self.actionqueue)>0:
-            rospy.loginfo("%d号--执行完毕--开始执行%d号任务",self.missions_msg.current_mission.mission_order, self.actionqueue[1])
+            rospy.loginfo("%d号--执行完毕--开始执行%d号任务",self.missions_msg.current_mission.mission_order, self.actionqueue[0]["mission"]["mission_order"])
             self.pub_mission_missions()
 
 
